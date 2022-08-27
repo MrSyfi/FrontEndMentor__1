@@ -1,0 +1,143 @@
+:root{
+    --bodybgColor: hsl(30,38%,92%);
+    --productCategoryColog: hsl(158, 36%, 37%);
+    --productDescriptionColor: hsl(228,12%,48%);
+    --uiItemColors: hsl(212,21%,14%);
+}
+
+@font-face {
+    font-family: 'MONTSERAT';
+    src: url(https://fonts.google.com/specimen/Montserrat);
+}
+
+@font-face {
+    font-family: 'FRAUNCES';
+    src: url(https://fonts.google.com/specimen/Fraunces);
+}
+
+body{
+    background-color: var(--bodybgColor);
+}
+
+p{
+    word-wrap: break-word;
+}
+
+.flexContainer{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    height: auto;
+}
+
+.card__productImg{
+    width: 50%;
+    height: auto;
+    content: url(../assets/img/image-product-desktop.jpg);
+    border: thin solid var(--bodybgColor);
+    border-radius: 5px 0 0 5px;
+}
+
+.card__content{
+    width: 50%;
+    margin-left: auto;
+    background-color: white;
+    border: thin solid var(--bodybgColor);
+    border-radius: 0 5px 5px 0;
+}
+
+.card__content > * {
+    margin: 2%;
+}
+
+.card__productCategory{
+    font-family: Montserrat;
+    font-size: 2vw;
+    color: var(--productCategoryColog);
+    font-weight: bold;
+    letter-spacing: 0.15em;
+}
+
+.card__productName{
+    color: black;
+    font-family: Montserrat;
+    font-weight: bolder;
+    font-size: 4vw;
+}
+
+.card__productDesc{
+    color: var(--productDescriptionColor);
+    font-family: Montserrat;
+}
+
+.card__productPriceContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: Fraunces;
+    color: var(--productCategoryColog);
+}
+
+    .card__productCurrentPrice{
+        font-size: 4vw;
+        font-weight: bolder;
+    }
+
+    .card__productoldPrice{
+        text-decoration: line-through;
+        margin-left: 1.5vw;
+    }
+
+.btn {
+    background-color: var(--productCategoryColog);
+    transition: background-color ease-in-out 0.3s;
+    height: 50px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.btn:hover{
+    background-color: var(--uiItemColors);
+    cursor: pointer;
+}
+
+.btn span {
+    margin-left: 5px;
+    font-family: Montserrat;
+}
+
+@media only screen and (max-width: 375px) {
+    .card{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .card__productImg{
+        width: 100%;
+        height: auto;
+        content: url(../assets/img/image-product-mobile.jpg);
+    }
+
+    .card__content{
+        width: 100%;
+    }
+
+    .card__productCategory{
+        font-size: 3vw;
+    }
+}
+
+    
